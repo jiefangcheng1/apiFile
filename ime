@@ -74,5 +74,177 @@
           `deleted_at`： '删除时间',
    
    }
+   2.数据接口名称：广场推荐动态
+    url：/square/api/v1.0/home/page/banners
+    请求方式：post
+    简单逻辑：按优选的内容时间倒叙排序，展示所有内容。
+    请求头格式：Content-Type ：  application/x-www-form-urlencoded   、application/json 
+    请求参数、说明：
+     {
+     "pageNum":1 ,  页码
+     "pageSize":10,  每页显示数量
+     "userId":1  登陆用户id
+     }
+    返回结果：
+    
+    {
+    "code": "200",
+    "msg": "成功",
+    "data": {
+        "listObj": [
+            {
+                "id": 1,
+                "userId": 2,
+                "feedTitle": "动态",
+                "feedUploads": "长传视频",
+                "feedMapLongitude": "1",
+                "feedMapLatitude": "1",
+                "feedMapName": "北京朝阳",
+                "feedContent": null,
+                "activeId": 0,
+                "feedIsRecommend": "1",
+                "feedLikeCount": 4,
+                "feedViewCount": 1,
+                "feedCollectCount": 0,
+                "createdAt": "2019-11-13T03:10:50.000+0000",
+                "updatedAt": "2019-11-13T03:10:52.000+0000",
+                "deletedAt": null,
+                "users": {
+                    "id": null,
+                    "userName": "2",
+                    "userPassword": null,
+                    "userPhone": null,
+                    "userAvatar": null,
+                    "userCover": null,
+                    "userSex": null,
+                    "userBirthday": null,
+                    "areaId": null,
+                    "userIntro": null,
+                    "userInterestTags": null,
+                    "userSingleTags": null,
+                    "userScore": null,
+                    "wxToken": null,
+                    "qqToken": null,
+                    "wbToken": null,
+                    "userMapLongitude": null,
+                    "userMapLatitude": null,
+                    "userMapName": null,
+                    "userOnlineStatus": null,
+                    "createdAt": null,
+                    "updatedAt": null,
+                    "deletedAt": null
+                },
+                "isFeedLikeCount": "1"
+            },
+            {
+                "id": 2,
+                "userId": 1,
+                "feedTitle": "动态",
+                "feedUploads": "长传视频",
+                "feedMapLongitude": "1",
+                "feedMapLatitude": "1",
+                "feedMapName": "北京朝阳",
+                "feedContent": null,
+                "activeId": 0,
+                "feedIsRecommend": "1",
+                "feedLikeCount": 4,
+                "feedViewCount": 1,
+                "feedCollectCount": 0,
+                "createdAt": "2019-11-13T03:10:50.000+0000",
+                "updatedAt": "2019-11-13T03:10:52.000+0000",
+                "deletedAt": null,
+                "users": {
+                    "id": null,
+                    "userName": "1",
+                    "userPassword": null,
+                    "userPhone": null,
+                    "userAvatar": "1",
+                    "userCover": null,
+                    "userSex": null,
+                    "userBirthday": null,
+                    "areaId": null,
+                    "userIntro": null,
+                    "userInterestTags": null,
+                    "userSingleTags": null,
+                    "userScore": null,
+                    "wxToken": null,
+                    "qqToken": null,
+                    "wbToken": null,
+                    "userMapLongitude": null,
+                    "userMapLatitude": null,
+                    "userMapName": null,
+                    "userOnlineStatus": null,
+                    "createdAt": null,
+                    "updatedAt": null,
+                    "deletedAt": null
+                },
+                "isFeedLikeCount": "0"
+            }
+        ],
+        "pageNum": 0,
+        "pageSize": 0,
+        "startRow": 0,
+        "endRow": 0,
+        "total": 0,
+        "pages": 0
+    }
+    
+    返回结果说明：
+    {
+           isFeedLikeCount  是否点赞 0 未 其他 点赞 
+          `id`  'ID',
+          `user_id`  '用户ID',
+          `feed_title`  '动态标题',
+          `feed_content`  '动态内容 必填',
+          `feed_uploads`  '上传视频/图片 必填，Json',
+          `feed_map_longitude` T '关联位置经度',
+          `feed_map_latitude`  '关联位置纬度',
+          `feed_map_name` '关联位置名称',
+          `active_id` int(11)  '关联活动ID',
+          `feed_is_recommend`  '是否推荐',
+          `feed_like_count`  '点赞统计',
+          `feed_view_count`  '浏览统计',
+          `feed_collect_count`  '收藏统计',
+          `created_at`  '添加时间',
+          `updated_at`  '更新时间',
+          `deleted_at`  '删除时间',
+          users{
+          
+             `id`  'ID',
+              `user_mark_id` ' 8位随机',
+              `user_group_id`  '用户组 1:普通用户',
+              `user_name`  '用户名 必填（可以自定义也可获取三方昵称）',
+              `user_password` '用户密码 密码备用',
+              `user_phone`  '手机号码 必填',
+              `user_avatar` '头像 必填',
+              `user_cover`  '个人封面图 封面图',
+              `user_sex`  '性别 0 : 女  1：男 必填 0 : 女  1：男',
+              `user_birthday`  '生日 必填',
+              `area_id` '所在地区 地区表id',
+              `user_intro` T '个性签名',
+              `user_interest_tags` '兴趣标签 Json必填（默认前端随机）',
+              `user_single_tags`  '个人标签 Json',
+              `user_score`  '用户积分',
+              `wx_token`  '微信注册登录',
+              `qq_token`  'QQ注册登录',
+              `wb_token`  '微博注册登录',
+              `user_map_longitude`  '实时位置经度 用户位置保存',
+              `user_map_latitude`  '实时位置纬度',
+              `user_map_name` '实时位置名称',
+              `user_online_status`  '用户在线状态在线   1：在线   0：离线',
+              `user_disable` int(11)  '用户禁用状态 0：禁用  1：启用',
+              `user_disable_remark`  '用户禁用备注',
+              `created_at`  '添加时间',
+              `updated_at`  '更新时间',
+              `deleted_at`  '删除时间',
+          }
+    
+    }
+    
+    
+    
+    
+}
+    
 
    
