@@ -241,10 +241,20 @@
     
     }
     
-    
-    
-    
 }
     
+    
+   3.数据接口名称：广场推荐动态
+    url：/square/api/v1.0/home/page/actives
+    请求方式：post
+    简单逻辑：1 城市  2 推荐发布的时间倒序  3普通上架时间倒序   4.初部显示4条前段控制  5.手机禁用位置 显示城市7747北京
+    请求头格式：Content-Type ：  application/x-www-form-urlencoded   、application/json 
+    请求参数、说明：
+     {
+     "pageNum":1 ,  页码
+     "pageSize":10,  每页显示数量
+     "userId":1  登陆用户城市
+     }
+    返回结果：
 
    
