@@ -1,10 +1,20 @@
-数据接口 
-    url：
-    请求参数：
-    {
-    
+项目名称： MarkLife 
+项目地址：http://localhost:8085/marklife
+
+
+一、 模块名称： 个人用户
+1.数据接口名称：发送短信验证码 
+    url：/user/v1.0/send/verification/code/{userPhone}
+    请求方式：get
+    请求头格式：
+    请求参数说明：
+    { 
+       userPhone ： 登陆者手机号
     }
-    返回结果：
+    返回结果/结果说明：
     {
-    
-    }
+    "code": "200", 200 成功  其他为失败
+    "msg": "成功",  提示的信息
+    "data": null    主题内容
+   }
+   
