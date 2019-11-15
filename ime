@@ -18,3 +18,61 @@
     "data": null    主题内容
    }
    
+   
+   
+   
+   二、 模块名称： 广场
+1.数据接口名称：Banners
+    url：/square/api/v1.0/home/page/banners
+    请求方式：get
+    请求头格式：
+    请求参数说明：
+    {}
+    返回结果：
+    {
+    "code": "200",
+    "msg": "成功",
+    "data": [
+        {
+            "id": 2,
+            "bannerPlaceId": 2,
+            "bannerTitle": "测试banner",
+            "bannerImages": "image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E5%9B%BE%E7%89%87&hs=0&pn=0&spn=0&di=200310&pi=0&rn=1&tn=baiduimagede",
+            "bannerType": "1",
+            "bannerValue": "image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E5%9B%BE%E7%89%87&hs=0&pn=0&spn=0&di=200310&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=2018939532%2C1617516463&os=224002914%2C4091424408&simid=3478832578%2C201143450&adpicid=0&lpn=0&ln=30&fr=ala&fm=&sme=&cg=&bdtype=0&oriquery=&objurl=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201208%2F30%2F20120830173930_PBfJE.jpeg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3B17tpwg2_z%26e3Bv54AzdH3Fks52AzdH3F%3Ft1%3Dddd90l80m&gsm=&i",
+            "createdAt": "2019-11-12T07:12:37.000+0000",
+            "updatedAt": "2019-11-12T07:12:40.000+0000",
+            "deletedAt": null
+        },
+        {
+            "id": 1,
+            "bannerPlaceId": 1,
+            "bannerTitle": "测试banner",
+            "bannerImages": "image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E5%9B%BE%E7%89%87&hs=0&pn=0&spn=0&di=200310&pi=0&rn=1&tn=baiduimagede",
+            "bannerType": "1",
+            "bannerValue": "image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E5%9B%BE%E7%89%87&hs=0&pn=0&spn=0&di=200310&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=2018939532%2C1617516463&os=224002914%2C4091424408&simid=3478832578%2C201143450&adpicid=0&lpn=0&ln=30&fr=ala&fm=&sme=&cg=&bdtype=0&oriquery=&objurl=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201208%2F30%2F20120830173930_PBfJE.jpeg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3B17tpwg2_z%26e3Bv54AzdH3Fks52AzdH3F%3Ft1%3Dddd90l80m&gsm=&i",
+            "createdAt": "2019-11-12T07:12:37.000+0000",
+            "updatedAt": "2019-11-05T07:12:40.000+0000",
+            "deletedAt": null
+        }
+    ]
+}
+   
+   
+   结果说明 ： {
+   
+           id
+          `banner_place_id`  ：'所属广告位',
+          `banner_title` ： '广告名称',
+          `banner_images`： '广告图片',
+          `banner_type` ： '跳转类型 内联、外联、静态',
+          `banner_value`： '跳转类型值 页面地址链接http或内联ID',
+          `banner_sort` ： '广告排序',
+          `banner_status` ：T '广告上下架状态',
+          `created_at`： '添加时间',
+          `updated_at`： '更新时间',
+          `deleted_at`： '删除时间',
+   
+   }
+
+   
