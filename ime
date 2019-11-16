@@ -394,3 +394,52 @@
               `deleted_at` '删除时间',
 }
 ]   
+
+
+4.数据接口名称：动态点赞
+    url：feeds/api/v1.0/give/like/{userId}
+    请求方式：post
+    简单逻辑：未点赞的动态
+    请求头格式：Content-Type ：  application/x-www-form-urlencoded   
+    请求参数：
+     {
+     "feedId":1 ,  
+     }
+     请求参数说明：
+     userId: 用户id
+     feedId : 活动id
+     
+    返回结果：
+    {
+    "code": "200",
+    "msg": "成功",
+    "data": {
+        "feedsId": 1, 动态id
+        "feedLikeCount": 1  点赞数
+    }
+}
+
+
+4.数据接口名称：取消动态点赞
+    url：feeds/api/v1.0/give/cancel/{userId}
+    请求方式：post
+    简单逻辑：未点赞的动态
+    请求头格式：Content-Type ：  application/x-www-form-urlencoded   
+    请求参数：
+     {
+     "feedId":1 ,  
+     }
+     请求参数说明：
+     userId: 用户id
+     feedId : 活动id
+     
+    返回结果：
+    {
+    "code": "200",
+    "msg": "成功",
+    "data": {
+        "feedsId": 1, 动态id
+        "feedLikeCount": 1  点赞数
+    }
+}
+
