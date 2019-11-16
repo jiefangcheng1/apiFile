@@ -244,7 +244,7 @@
 }
     
     
-   3.数据接口名称：广场推荐动态
+   3.数据接口名称：广场推荐活动
     url：/square/api/v1.0/home/page/actives
     请求方式：post
     简单逻辑：1 城市  2 推荐发布的时间倒序  3普通上架时间倒序   4.初部显示4条前段控制  5.手机禁用位置 显示城市7747北京
@@ -253,8 +253,144 @@
      {
      "pageNum":1 ,  页码
      "pageSize":10,  每页显示数量
-     "userId":1  登陆用户城市
+     "cityId":1  登陆用户城市id
      }
     返回结果：
+    {
+    "code": "200",
+    "msg": "成功",
+    "data": {
+        "listObj": [
+            {
+                "id": 2,
+                "groupId": null,
+                "activeCateId": null,
+                "activeTitle": null,
+                "activeActor": null,
+                "activeCover": null,
+                "activeContent": null,
+                "activeContentCover": null,
+                "activeContentBgCover": null,
+                "activeAreaId": null,
+                "activeStartDate": "2019-11-29T04:13:01.000+0000",
+                "activeEndDate": "2020-01-25T04:13:06.000+0000",
+                "activePrice": null,
+                "activeMapLongitude": null,
+                "activeMapLatitude": null,
+                "activeMapName": null,
+                "activeLink": null,
+                "activeViewCount": null,
+                "activeFollowCount": null,
+                "activeSort": null,
+                "createdAt": null,
+                "updatedAt": null,
+                "deletedAt": null,
+                "activePlaceName": null,
+                "activeCityName": null,
+                "isFeedLikeCount": null,
+                "activeRecommend": 1
+            },
+            {
+                "id": 1,
+                "groupId": null,
+                "activeCateId": null,
+                "activeTitle": null,
+                "activeActor": null,
+                "activeCover": null,
+                "activeContent": null,
+                "activeContentCover": null,
+                "activeContentBgCover": null,
+                "activeAreaId": null,
+                "activeStartDate": "2019-11-22T04:12:45.000+0000",
+                "activeEndDate": "2019-11-22T04:12:52.000+0000",
+                "activePrice": null,
+                "activeMapLongitude": null,
+                "activeMapLatitude": null,
+                "activeMapName": null,
+                "activeLink": null,
+                "activeViewCount": null,
+                "activeFollowCount": null,
+                "activeSort": null,
+                "createdAt": null,
+                "updatedAt": null,
+                "deletedAt": null,
+                "activePlaceName": null,
+                "activeCityName": null,
+                "isFeedLikeCount": null,
+                "activeRecommend": 0
+            },
+            {
+                "id": 3,
+                "groupId": null,
+                "activeCateId": null,
+                "activeTitle": null,
+                "activeActor": null,
+                "activeCover": null,
+                "activeContent": null,
+                "activeContentCover": null,
+                "activeContentBgCover": null,
+                "activeAreaId": null,
+                "activeStartDate": "2019-11-29T04:13:01.000+0000",
+                "activeEndDate": "2020-01-25T04:13:06.000+0000",
+                "activePrice": null,
+                "activeMapLongitude": null,
+                "activeMapLatitude": null,
+                "activeMapName": null,
+                "activeLink": null,
+                "activeViewCount": null,
+                "activeFollowCount": null,
+                "activeSort": null,
+                "createdAt": null,
+                "updatedAt": null,
+                "deletedAt": null,
+                "activePlaceName": null,
+                "activeCityName": null,
+                "isFeedLikeCount": null,
+                "activeRecommend": 3
+            }
+        ],
+        "pageNum": 0,
+        "pageSize": 0,
+        "startRow": 0,
+        "endRow": 0,
+        "total": 0,
+        "pages": 0
+    }
+}
 
-   
+
+返回结果说明 ：
+
+
+ "listObj": [
+            {
+              `id` 
+              `group_id`  '群空间ID 后台添加群空间生成，唯一索引',
+              `active_cate_id`  '活动分类 ID',
+              `active_title`  '活动名称',
+              `active_actor` '活动相关艺人',
+              `active_content`  '活动详情',
+              `active_cover`T '活动列表封面图',
+              `active_content_cover`  '活动内容封面图',
+              `active_content_bg_cover` '活动内容背景图',
+              `active_area_id` '活动地点三级联动',
+              `active_place_name` '活动地点具体名称',
+              `active_start_date`  '活动开始日期',
+              `active_end_date`  '活动结束日期',
+              `active_price`  '活动费用',
+              `active_map_longitude`  '活动位置经度',
+              `active_map_latitude`  '活动位置纬度',
+              `active_map_name`  '活动位置名称',
+              `active_link`  '跳转链接',
+              `active_view_count` '浏览统计',
+              `active_follow_count` '关注统计',
+              `active_sort` int(11) '活动排序',
+              `active_recommend` '活动推荐 0：未推荐 1：已推荐',
+              `active_recommend_date`  '活动推荐时间',
+              `active_status`  '活动上下架 状态 0：未发布  1：已发布  2：已下架',
+              `active_from` '活动来源 0：内置 1：导入',
+              `created_at`  '添加时间',
+              `updated_at` '更新时间',
+              `deleted_at` '删除时间',
+}
+]   
