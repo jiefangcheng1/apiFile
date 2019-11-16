@@ -21,7 +21,7 @@
    
    
    
-   二、 模块名称： 广场
+ 二、 模块名称： 广场
 1.数据接口名称：Banners
     url：/square/api/v1.0/home/page/banners
     请求方式：get
@@ -443,3 +443,36 @@
     }
 }
 
+
+
+ 三、 模块名称：活动
+1.数据接口名称：活动类型
+    url：/marklife/ctive/actives/v1.0/get/type
+    请求方式：get
+    请求头格式：
+    请求参数说明：
+    {}
+    返回结果：
+    {
+    "code": "200",
+    "msg": "成功",
+    "data": [
+        {
+            "id": 2,
+            "activeCateTitle": "音乐会"
+        },
+        {
+            "id": 4,
+            "activeCateTitle": "展览"
+        },
+        {
+            "id": 1,
+            "activeCateTitle": "演唱会"
+        }
+    ]
+}
+返回结果说明：
+{
+   id ： 类型id
+   activeCateTitle  ： 活动类型名称
+}
