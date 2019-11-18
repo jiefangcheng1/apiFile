@@ -445,9 +445,47 @@
 
 
 
- 三、 模块名称：活动
-1.数据接口名称：活动类型
-    url：/marklife/ctive/actives/v1.0/get/type
+ 
+1.数据接口名称：活动城市
+    url：/ctive/actives/v1.0/get/type
+    请求方式：get
+    请求头格式：
+    请求参数说明：
+    {}
+    返回结果：
+  {
+    "code": "200",
+    "msg": "成功",
+    "data": [
+        {
+            "id": 1,
+            "activeCityName": "北京",
+            "activeCitySort": null,
+            "activeCityLetterSort": "B",
+            "createdAt": null,
+            "updatedAt": null,
+            "deletedAt": null
+        },
+        {
+            "id": 2,
+            "activeCityName": "天津",
+            "activeCitySort": null,
+            "activeCityLetterSort": "T",
+            "createdAt": null,
+            "updatedAt": null,
+            "deletedAt": null
+        }
+    ]
+   }
+返回结果说明：
+{
+   id ：城市id
+   activeCityName  ： 城市名称
+}
+
+
+2.数据接口名称：活动类型
+    url：/ctive/actives/v1.0/get/type
     请求方式：get
     请求头格式：
     请求参数说明：
