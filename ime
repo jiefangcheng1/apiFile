@@ -444,7 +444,7 @@
 }
 
 
-
+二、 模块名称： 活动
  
 1.数据接口名称：活动城市
     url：/ctive/actives/v1.0/get/type
@@ -602,3 +602,28 @@
 
     }
     
+    
+    四、 模块名称： 动态
+    
+    1.数据接口名称：发布动态
+    url：/feeds/api/v1.0/publish/feeds
+    请求方式：post
+    简单逻辑： 动态有标题且正文>100字，或 图片>=3张的为优选内容
+    请求头格式：Content-Type ：  application/x-www-form-urlencoded   、application/json 
+    请求参数、说明：
+     { 
+	   "userId" :1,
+	   "feedTitle":"动态标题",
+	  "feedConten": "动态内容必填",
+	  "feedUploads": "['SHDKS','SHIFSA','HSJHF']" , // 发布的图片或视频地址
+	  "feedMapLongitude": "1459840.2554" , //经度
+	  "feedMapLatitude": "111",  // 维度
+	  "feedMapName": "北京市"，
+          "isMp4" " 0; 1 表示视频  0 图片
+ 
+        }
+    返回结果{
+    "code": "200",
+    "msg": "成功",
+    "data": null
+}
