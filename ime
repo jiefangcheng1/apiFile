@@ -514,3 +514,91 @@
    id ： 类型id
    activeCateTitle  ： 活动类型名称
 }
+
+
+3.数据接口名称：更多活动
+    url：/ctive/actives/v1.0/get/list
+    请求方式：post
+    简单逻辑：  可以根据用户选择  城市  时间  和内容 （如果没有没有内容 选择活动为结束的   有内容搜索全部）
+	           *  活动通过搜索活动标题、活动地点和相关艺人，搜索所有上架状态的活动
+    请求头格式：Content-Type ：  application/x-www-form-urlencoded   、application/json 
+    请求参数、说明：
+     {
+     "pageNum":1 , 
+     "pageSize":10, 
+      "cityId":1,  城市id 
+      "userId":1   用户id  必填 
+       "timeType":  时间类型   7 一周 30  30天内  2 周末
+       "content":  搜索的内容
+        "activesCatesId" 活动类型id
+     }
+    返回结果：
+    {
+    "code": "200",
+    "msg": "成功",
+    "data": [
+        {
+            "id": 3,
+            "groupId": 3,
+            "activeCateId": 1,
+            "activeTitle": "1",
+            "activeActor": null,
+            "activeCover": null,
+            "activeContent": null,
+            "activeContentCover": null,
+            "activeContentBgCover": null,
+            "activeAreaId": 1,
+            "activeStartDate": "2019-11-29 12:13:01",
+            "activeEndDate": "2020-01-25 12:13:06",
+            "activePrice": null,
+            "activeMapLongitude": null,
+            "activeMapLatitude": null,
+            "activeMapName": null,
+            "activeLink": null,
+            "activeViewCount": 0,
+            "activeFollowCount": 0,
+            "activeSort": 0,
+            "createdAt": null,
+            "updatedAt": null,
+            "deletedAt": null,
+            "activePlaceName": null,
+            "activeCityName": "北京",
+            "isFeedLikeCount": "0",
+            "activeRecommend": 3
+        },
+       
+    ]
+}
+
+    返回结果说明：
+    {
+    	 id;
+         groupId;		// 群空间ID 后台添加群空间生成，唯一索引
+         activeCateId;		// 活动分类
+         activeTitle;		// 活动名称
+	     activeActor;		// 活动相关艺人
+         activeCover;		// 活动列表封面图
+	     activeContent;		// 活动详情
+         activeContentCover;		// 活动内容封面图
+	     activeContentBgCover;		// 活动内容背景图
+         activeAreaId;		// 所属城市 -大表
+	     activeStartDate;		// 活动日期  - 活动开始时间
+	     activeEndDate;    // 活动结束时间
+         activePrice;		// 活动费用
+	     activeMapLongitude;		// 活动位置经度
+	    activeMapLatitude;		// 活动位置纬度
+	     activeMapName;		// 活动位置名称
+        activeLink;		// 跳转链接
+         activeViewCount;		// 浏览统计
+        activeFollowCount;		// 关注统计
+        activeSort;		// 活动排序
+	    createdAt;		// 添加时间
+        updatedAt;		// 更新时间
+	    deletedAt;		// 删除时间
+	    activePlaceName;  //活动的具体地址
+	    activeCityName;		// 城市名称 (用于展示)
+	    isFeedLikeCount ; //  0 未点赞 其余点赞
+	    activeRecommend; //  是否是推荐活动
+
+    }
+    
