@@ -627,3 +627,94 @@
     "msg": "成功",
     "data": null
 }
+
+  2.数据接口名称：发布动态查询附件的活动
+    url：ctive/actives/v1.0/get/by/distance
+    请求方式：post
+    简单逻辑： 
+         1选择位置，可根据定位推荐部分，没有想选的可以搜索关键字；
+	 2已选择位置可在当前页面删除，点击地址可进入位置选择页面
+	 3选择位置后推荐位置附近（5km之内）的活动，如没有显示推荐活动  （所有活动
+    请求头格式：Content-Type ：  application/x-www-form-urlencoded   、application/json 
+    请求参数、说明：
+     {
+	"activeMapLongitude":"116.47631",  //经度
+	"activeMapLatitude":"39.983901", //纬度
+	"pageNum":"1",
+	"pageSize":"10"
+  	"content"  //选择的内容
+      }
+      
+      返回结果 ：
+      {
+    "code": "200",
+    "msg": "成功",
+    "data": [
+        {
+            "id": 5,
+            "groupId": null,
+            "activeCateId": null,
+            "activeTitle": null,
+            "activeActor": null,
+            "activeCover": null,
+            "activeContent": null,
+            "activeContentCover": null,
+            "activeContentBgCover": null,
+            "activeAreaId": null,
+            "activeStartDate": null,
+            "activeEndDate": null,
+            "activePrice": null,
+            "activeMapLongitude": "116.47631",
+            "activeMapLatitude": "39.983901",
+            "activeMapName": null,
+            "activeLink": null,
+            "activeViewCount": 0,
+            "activeFollowCount": 0,
+            "activeSort": 0,
+            "createdAt": null,
+            "updatedAt": null,
+            "deletedAt": null,
+            "activePlaceName": null,
+            "activeCityName": null,
+            "isFeedLikeCount": "0",
+            "activeRecommend": 0,
+            "distance": "0"
+        },
+        {
+            "id": 4,
+            "groupId": null,
+            "activeCateId": null,
+            "activeTitle": null,
+            "activeActor": null,
+            "activeCover": null,
+            "activeContent": null,
+            "activeContentCover": null,
+            "activeContentBgCover": null,
+            "activeAreaId": null,
+            "activeStartDate": null,
+            "activeEndDate": null,
+            "activePrice": null,
+            "activeMapLongitude": "116.475736",
+            "activeMapLatitude": "39.984033",
+            "activeMapName": null,
+            "activeLink": null,
+            "activeViewCount": 0,
+            "activeFollowCount": 0,
+            "activeSort": 0,
+            "createdAt": null,
+            "updatedAt": null,
+            "deletedAt": null,
+            "activePlaceName": null,
+            "activeCityName": null,
+            "isFeedLikeCount": "0",
+            "activeRecommend": 0,
+            "distance": "0.0641603901007959"
+        }
+    ]
+}
+
+   返回结果说明 ：{
+     请参考 推荐活动
+   
+   }
+
