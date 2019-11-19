@@ -718,3 +718,434 @@
    
    }
 
+
+  3.数据接口名称：动态详情
+    url：feeds/api/v1.0/get/feeds/details
+    请求方式：post
+    简单逻辑：
+    请求头格式：Content-Type ：  application/x-www-form-urlencoded   、application/json 
+    请求参数、说明：
+     {
+	"id":1,  动态id
+	"userId":1  登录用户id
+	
+     }
+     返回结果：
+    {
+    "code": "200",
+    "msg": "成功",
+    "data": {
+        "id": 1,
+        "userId": 2,
+        "feedTitle": "11",
+        "feedUploads": "[fdjaho,fjdash]",
+        "feedMapLongitude": null,
+        "feedMapLatitude": null,
+        "feedMapName": null,
+        "feedContent": null,
+        "activeId": 0,
+        "feedIsRecommend": "0",
+        "feedLikeCount": 0,
+        "feedViewCount": 0,
+        "feedCollectCount": 0,
+        "createdAt": null,
+        "updatedAt": null,
+        "deletedAt": null,
+        "users": {
+            "id": 2,
+            "userName": "2",
+            "userPassword": null,
+            "userPhone": null,
+            "userAvatar": null,
+            "userCover": null,
+            "userSex": null,
+            "userBirthday": null,
+            "areaId": null,
+            "userIntro": null,
+            "userInterestTags": null,
+            "userSingleTags": null,
+            "userScore": null,
+            "wxToken": null,
+            "qqToken": null,
+            "wbToken": null,
+            "userMapLongitude": null,
+            "userMapLatitude": null,
+            "userMapName": null,
+            "userOnlineStatus": null,
+            "createdAt": null,
+            "updatedAt": null,
+            "deletedAt": null,
+            "areaName": null,
+            "isFollows": "2"    // 是否关注了 0 未关注  1 关注  2 互相关注  
+        },
+        "isFeedLikeCount": null,  //   是否点赞      0 未  其余 点赞
+        "isFeedCollects": "0",  //  是否收藏        0 未    其余收藏
+        "isMp4": 0,
+        "listFeedsComments": null 
+    }
+}
+   返回结果说明：{
+     请参考 推荐动态
+   }
+
+
+  4.数据接口名称：动态详情评论
+    url：/feeds/api/v1.0/get/feeds/comments
+    请求方式：post
+    简单逻辑：
+    请求头格式：Content-Type ：  application/x-www-form-urlencoded   、application/json 
+    请求参数、说明：
+    {
+	"id":1,  动态id
+	"pageNum":"1",
+	"pageSize":"10"
+}
+ 返回结果 
+ {
+    "code": "200",
+    "msg": "成功",
+    "data": [
+        {
+            "id": 1,
+            "pid": 0,
+            "userId": 1,
+            "returnUserId": 0,
+            "feedId": 1,
+            "commentContent": "257425",
+            "commentSort": null,
+            "commentLikeCount": null,
+            "createdAt": null,
+            "updatedAt": "2019-11-19 11:47:49",
+            "deletedAt": null,
+            "listComments": [
+                {
+                    "id": 2,
+                    "pid": 1,
+                    "userId": 2,
+                    "returnUserId": 0,
+                    "feedId": 1,
+                    "commentContent": null,
+                    "commentSort": null,
+                    "commentLikeCount": null,
+                    "createdAt": null,
+                    "updatedAt": null,
+                    "deletedAt": null,
+                    "listComments": [
+                        {
+                            "id": 4,
+                            "pid": 2,
+                            "userId": 1,
+                            "returnUserId": 0,
+                            "feedId": 1,
+                            "commentContent": null,
+                            "commentSort": null,
+                            "commentLikeCount": null,
+                            "createdAt": null,
+                            "updatedAt": null,
+                            "deletedAt": null,
+                            "listComments": [],
+                            "users": {
+                                "id": null,
+                                "userName": "龙山",
+                                "userPassword": null,
+                                "userPhone": null,
+                                "userAvatar": null,
+                                "userCover": null,
+                                "userSex": null,
+                                "userBirthday": null,
+                                "areaId": null,
+                                "userIntro": null,
+                                "userInterestTags": null,
+                                "userSingleTags": null,
+                                "userScore": null,
+                                "wxToken": null,
+                                "qqToken": null,
+                                "wbToken": null,
+                                "userMapLongitude": null,
+                                "userMapLatitude": null,
+                                "userMapName": null,
+                                "userOnlineStatus": null,
+                                "createdAt": null,
+                                "updatedAt": null,
+                                "deletedAt": null,
+                                "areaName": null,
+                                "isFollows": null
+                            }
+                        }
+                    ],
+                    "users": {
+                        "id": null,
+                        "userName": "2",
+                        "userPassword": null,
+                        "userPhone": null,
+                        "userAvatar": null,
+                        "userCover": null,
+                        "userSex": null,
+                        "userBirthday": null,
+                        "areaId": null,
+                        "userIntro": null,
+                        "userInterestTags": null,
+                        "userSingleTags": null,
+                        "userScore": null,
+                        "wxToken": null,
+                        "qqToken": null,
+                        "wbToken": null,
+                        "userMapLongitude": null,
+                        "userMapLatitude": null,
+                        "userMapName": null,
+                        "userOnlineStatus": null,
+                        "createdAt": null,
+                        "updatedAt": null,
+                        "deletedAt": null,
+                        "areaName": null,
+                        "isFollows": null
+                    }
+                }
+            ],
+            "users": {
+                "id": null,
+                "userName": "龙山",
+                "userPassword": null,
+                "userPhone": null,
+                "userAvatar": null,
+                "userCover": null,
+                "userSex": null,
+                "userBirthday": null,
+                "areaId": null,
+                "userIntro": null,
+                "userInterestTags": null,
+                "userSingleTags": null,
+                "userScore": null,
+                "wxToken": null,
+                "qqToken": null,
+                "wbToken": null,
+                "userMapLongitude": null,
+                "userMapLatitude": null,
+                "userMapName": null,
+                "userOnlineStatus": null,
+                "createdAt": null,
+                "updatedAt": null,
+                "deletedAt": null,
+                "areaName": null,
+                "isFollows": null
+            }
+        },
+        {
+            "id": 3,
+            "pid": 0,
+            "userId": 3,
+            "returnUserId": 0,
+            "feedId": 1,
+            "commentContent": null,
+            "commentSort": null,
+            "commentLikeCount": null,
+            "createdAt": null,
+            "updatedAt": null,
+            "deletedAt": null,
+            "listComments": [],
+            "users": {
+                "id": null,
+                "userName": "3",
+                "userPassword": null,
+                "userPhone": null,
+                "userAvatar": null,
+                "userCover": null,
+                "userSex": null,
+                "userBirthday": null,
+                "areaId": null,
+                "userIntro": null,
+                "userInterestTags": null,
+                "userSingleTags": null,
+                "userScore": null,
+                "wxToken": null,
+                "qqToken": null,
+                "wbToken": null,
+                "userMapLongitude": null,
+                "userMapLatitude": null,
+                "userMapName": null,
+                "userOnlineStatus": null,
+                "createdAt": null,
+                "updatedAt": null,
+                "deletedAt": null,
+                "areaName": null,
+                "isFollows": null
+            }
+        }
+    ]
+}
+
+返回结果说明：
+{
+    "code": "200",
+    "msg": "成功",
+    "data": [
+        {
+            "id": 1,  // 评论id
+            "pid": 0,  // 回复评论id
+            "userId": 1, // 发布评论者id
+            "returnUserId": 0,
+            "feedId": 1,   //动态id
+            "commentContent": "257425",  动态内容
+            "commentSort": null,
+            "commentLikeCount": null,
+            "createdAt": null,
+            "updatedAt": "2019-11-19 11:47:49",  发布时间  
+            "deletedAt": null,
+            "listComments": [
+                {
+                    "id": 2,
+                    "pid": 1,
+                    "userId": 2,
+                    "returnUserId": 0,
+                    "feedId": 1,
+                    "commentContent": null,
+                    "commentSort": null,
+                    "commentLikeCount": null,
+                    "createdAt": null,
+                    "updatedAt": null,
+                    "deletedAt": null,
+                    "listComments": [
+                        {
+                            "id": 4,
+                            "pid": 2,
+                            "userId": 1,
+                            "returnUserId": 0,
+                            "feedId": 1,
+                            "commentContent": null,
+                            "commentSort": null,
+                            "commentLikeCount": null,
+                            "createdAt": null,
+                            "updatedAt": null,
+                            "deletedAt": null,
+                            "listComments": [],
+                            "users": {
+                                "id": null,
+                                "userName": "龙山",
+                                "userPassword": null,
+                                "userPhone": null,
+                                "userAvatar": null,
+                                "userCover": null,
+                                "userSex": null,
+                                "userBirthday": null,
+                                "areaId": null,
+                                "userIntro": null,
+                                "userInterestTags": null,
+                                "userSingleTags": null,
+                                "userScore": null,
+                                "wxToken": null,
+                                "qqToken": null,
+                                "wbToken": null,
+                                "userMapLongitude": null,
+                                "userMapLatitude": null,
+                                "userMapName": null,
+                                "userOnlineStatus": null,
+                                "createdAt": null,
+                                "updatedAt": null,
+                                "deletedAt": null,
+                                "areaName": null,
+                                "isFollows": null
+                            }
+                        }
+                    ], 
+                    "users": {    ///  请参考用户 
+                        "id": null,
+                        "userName": "2",
+                        "userPassword": null,
+                        "userPhone": null,
+                        "userAvatar": null,
+                        "userCover": null,
+                        "userSex": null,
+                        "userBirthday": null,
+                        "areaId": null,
+                        "userIntro": null,
+                        "userInterestTags": null,
+                        "userSingleTags": null,
+                        "userScore": null,
+                        "wxToken": null,
+                        "qqToken": null,
+                        "wbToken": null,
+                        "userMapLongitude": null,
+                        "userMapLatitude": null,
+                        "userMapName": null,
+                        "userOnlineStatus": null,
+                        "createdAt": null,
+                        "updatedAt": null,
+                        "deletedAt": null,
+                        "areaName": null,
+                        "isFollows": null
+                    }
+                }
+            ],
+            "users": {
+                "id": null,
+                "userName": "龙山",
+                "userPassword": null,
+                "userPhone": null,
+                "userAvatar": null,
+                "userCover": null,
+                "userSex": null,
+                "userBirthday": null,
+                "areaId": null,
+                "userIntro": null,
+                "userInterestTags": null,
+                "userSingleTags": null,
+                "userScore": null,
+                "wxToken": null,
+                "qqToken": null,
+                "wbToken": null,
+                "userMapLongitude": null,
+                "userMapLatitude": null,
+                "userMapName": null,
+                "userOnlineStatus": null,
+                "createdAt": null,
+                "updatedAt": null,
+                "deletedAt": null,
+                "areaName": null,
+                "isFollows": null
+            }
+        },
+        {
+            "id": 3,
+            "pid": 0,
+            "userId": 3,
+            "returnUserId": 0,
+            "feedId": 1,
+            "commentContent": null,
+            "commentSort": null,
+            "commentLikeCount": null,
+            "createdAt": null,
+            "updatedAt": null,
+            "deletedAt": null,
+            "listComments": [],
+            "users": {
+                "id": null,
+                "userName": "3",
+                "userPassword": null,
+                "userPhone": null,
+                "userAvatar": null,
+                "userCover": null,
+                "userSex": null,
+                "userBirthday": null,
+                "areaId": null,
+                "userIntro": null,
+                "userInterestTags": null,
+                "userSingleTags": null,
+                "userScore": null,
+                "wxToken": null,
+                "qqToken": null,
+                "wbToken": null,
+                "userMapLongitude": null,
+                "userMapLatitude": null,
+                "userMapName": null,
+                "userOnlineStatus": null,
+                "createdAt": null,
+                "updatedAt": null,
+                "deletedAt": null,
+                "areaName": null,
+                "isFollows": null
+            }
+        }
+    ]
+}
+
+
