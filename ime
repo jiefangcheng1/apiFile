@@ -1149,3 +1149,87 @@
 }
 
 
+  5.数据接口名称：添加动态浏览
+    url：/feeds/api/v1.0/get/feeds/add/view/{id}
+    请求方式：get
+    请求参数、说明：
+    {
+	"id":1,  动态id
+      }
+   返回结果 :
+   {
+    "code": "200",
+    "msg": "成功",
+    "data": null
+}
+   
+     6.数据接口名称：添加收藏
+    url：v1.0/feeds/add/collects/{feedsId}/{userId}
+    请求方式：get
+    请求参数、说明：
+    {
+	"feedsId":1,  动态id
+        "userId":1  登录用户id
+      }
+        返回结果 :
+   {
+    "code": "200",
+    "msg": "成功",
+    "data": null
+}
+       7.数据接口名称：取消收藏
+    url：v1.0/feeds/cancal/collects/{feedsId}/{userId}
+    请求方式：get
+    请求参数、说明：
+    {
+	"feedsId":1,  动态id
+        "userId":1  登录用户id
+      }
+      
+     返回结果 :
+   {
+    "code": "200",
+    "msg": "成功",
+    "data": null
+} 
+   
+    8.数据接口名称：发表评论
+    url：/feeds/api/v1.0/feeds/sent/comments
+    请求方式：post
+    请求参数、说明：
+   
+   {
+     "pid":1 ,  // 回复评论的评论id
+    "userId" :1 ,  // 用户id
+    "feedId" :"1",  // 动态id
+    "commentContent" :"111"  // 评论内容
+   }
+      
+   返回结果 ： 
+   {
+    "code": "200",
+    "msg": "成功",
+    "data": null
+}
+   
+   
+   
+   10.数据接口名称：删除发表评论
+    url：/feeds/api/v1.0/feeds/cancal/comments/{commentId}/{userId}
+    请求方式：get
+    简单逻辑：  只能删除自己发布的评论
+    请求参数、说明：
+   
+   {
+     "commentId":1 ,  // 评论id
+    "userId" :1 ,  // 用户id
+  
+   }
+      
+   返回结果 ： 
+   {
+    "code": "200",
+    "msg": "成功",
+    "data": null
+}
+
