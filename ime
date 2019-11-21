@@ -13,14 +13,180 @@
     }
     返回结果/结果说明：
     {
+      "code": "200", 200 成功  其他为失败
+      "msg": "成功",  提示的信息
+       "data": null    主题内容
+     }
+   
+2.数据接口名称： 登录校验 
+    url：/v1.0/register
+    请求方式：、post
+    请求头格式：
+    请求参数说明：
+    {
+	  "userPhone":"15201567001", 手机号
+      "registerType":"1",  // 登录类型  1  手机  2 微信  3 qq  4  微博
+      "code":"8677"  // 验证码
+“wxToken”  微信
+       “qqToken”   qq
+“wbToken”    微博
+
+
+}
+    返回结果/结果说明：
+   {
+    "code": "200",  //      200登录成功  203 用户未注册   602 手机验证码不正确 
+    "msg": "成功",
+    "data": {
+        "id": 13,
+        "userMarkId": null,  //Mark号
+        "userName": "用户名 必填（可以自定义也可获取三方昵称）",// 用户名
+        "userPassword": null,  //  用户密码 密码备用
+        "userPhone": "15201567001",// 手机号码
+        "userAvatar": "头像 必填",//
+        "userCover": null,// 头像 必填
+        "userSex": 1,// 性别
+        "userBirthday": "2019-09-09T00:00:00.000+0000", //   生日 必填
+        "areaId": null,//   所在地区
+        "userIntro": null,//  个性签名
+        "userInterestTags": null,//  个人标签 Json
+        "userSingleTags": null,// 兴趣标签 Json必填
+        "userScore": 0,// 
+        "wxToken": "WX_AR2390JOFASDF902JFLDSAJLKFASDFKLASDJFLKADSC",// 微信
+        "qqToken": "QQ_ASDLKFJL123JEOIDFJOI9CJOSDLVLKA",// qq
+        "wbToken": "WB_20IOPSDKVASKDMLV",//  微博
+        "userMapLongitude": null,//  实时位置经度
+        "userMapLatitude": null,// 实时位置纬度
+        "userMapName": null,// 实时位置名称
+        "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMyIsImlhdCI6MTU3NDMyMzA1Miwic3ViIjoibHVvbW91cmVuQHh4eC5jb20iLCJpc3MiOiJ3d3cuZ3Vhbmd5dWFuYmouY29tIiwiZXhwIjozMTQ4NjQ2MTA0fQ.no-qTe0ps1ePeHYluBTMwtvM0FfL1M-YHyPKTjaXOZA"//  accessToken 
+    }
+}
+
+3.数据接口名称： 注册
+    url：v1.0/register/user
+    请求方式：、post
+    请求头格式：
+    请求参数说明：
+    {
+	
+  "user_name" : "用户名 必填（可以自定义也可获取三方昵称）",  //用户名称
+  "user_phone": "15201567002",  // 手机号
+  "user_avatar": "头像 必填",  //头像
+  "user_cover":  "个人封面图 封面图  ",
+  "user_sex":    "0" ,  //性别  1 男 2 女  
+  "user_birthday" :"2019-09-09",
+  "user_area_id":  "1",
+  "user_intro": "个性签名",
+  "user_interest_tags": "兴趣标签 Json必填（默认前端随机）",
+  "user_single_tags": "个人标签 Json",
+  "wx_token": "微信注册登录",
+  "qq_token": "QQ注册登录",
+  "wb_token":  "微博注册登录"
+	
+}
+
+  返回结果/结果说明：
+{
+同登录校验模块
+}
+
+
+4.数据接口名称： 标签类型
+    url：/v1.0/get/tags/{type}
+    请求方式：、GET
+    请求头格式：
+    请求参数说明：
+{
+type : 1 个人标签 2 兴趣标签  3 打卡标签
+
+}
+ 返回结果/结果说明：
+    {
+    "code": "200",
+    "msg": "成功",
+    "data": [
+        {   一级标签  
+            "id": 1, 
+            "pid": 0,  父id
+            "tagCateId": 1,   标签分类ID
+            "tagTitle": "个性标签1",   标签名称
+            "tagStatus": 1,   标签状态
+            "tagIcon": null,   标签图标
+            "tagSort": 0,
+            "createdAt": null,
+            "updatedAt": null,
+            "deletedAt": null,
+            "tagsList": [      二级标签
+                {
+                    "id": 5,
+                    "pid": 1,
+                    "tagCateId": null,
+                    "tagTitle": "个性标签二级1",
+                    "tagStatus": 1,
+                    "tagIcon": null,
+                    "tagSort": 0,
+                    "createdAt": null,
+                    "updatedAt": null,
+                    "deletedAt": null,
+                    "tagsList": []
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "pid": 0,
+            "tagCateId": 1,
+            "tagTitle": "个性标签2",
+            "tagStatus": 1,
+            "tagIcon": null,
+            "tagSort": 0,
+            "createdAt": null,
+            "updatedAt": null,
+            "deletedAt": null,
+            "tagsList": []
+        }
+    ]
+}
+
+
+2.数据接口名称：关注
+    url：/v1.0/feeds/add/follow/{followUserId}/{userId}
+    请求方式：get
+    请求头格式：
+    请求参数说明：
+    { 
+       followUserId ： 被关注人id
+       userId :登录者id
+    }
+    返回结果/结果说明：
+    {
     "code": "200", 200 成功  其他为失败
     "msg": "成功",  提示的信息
     "data": null    主题内容
    }
    
+3.数据接口名称：取消关注
+    url：/v1.0/feeds/cancal/follow/{followUserId}/{userId}
+    请求方式：get
+    请求头格式：
+    请求参数说明：
+    { 
+       followUserId ： 被关注人id
+       userId :登录者id
+    }
+    返回结果/结果说明：
+    {
+    "code": "200", 200 成功  其他为失败
+    "msg": "成功",  提示的信息
+    "data": null    主题内容
+   }
    
-   
-   
+   {
+    "code": "602",
+    "msg": "手机号验证码不正确",
+    "data": null
+}
+
  二、 模块名称： 广场
 1.数据接口名称：Banners
     url：/square/api/v1.0/home/page/banners
@@ -74,7 +240,7 @@
           `deleted_at`： '删除时间',
    
    }
-   2.数据接口名称：广场推荐动态
+2.数据接口名称：广场推荐动态
     url：/square/api/v1.0/home/page/banners
     请求方式：post
     简单逻辑：按优选的内容时间倒叙排序，展示所有内容。
@@ -244,7 +410,7 @@
 }
     
     
-   3.数据接口名称：广场推荐活动
+3.数据接口名称：广场推荐活动
     url：/square/api/v1.0/home/page/actives
     请求方式：post
     简单逻辑：1 城市  2 推荐发布的时间倒序  3普通上架时间倒序   4.初部显示4条前段控制  5.手机禁用位置 显示城市7747北京
@@ -420,7 +586,7 @@
 }
 
 
-4.数据接口名称：取消动态点赞
+5.数据接口名称：取消动态点赞
     url：feeds/api/v1.0/give/cancel/{userId}
     请求方式：post
     简单逻辑：未点赞的动态
@@ -444,7 +610,7 @@
 }
 
 
-二、 模块名称： 活动
+三、 模块名称： 活动
  
 1.数据接口名称：活动城市
     url：/ctive/actives/v1.0/get/type
@@ -603,9 +769,9 @@
     }
     
     
-    四、 模块名称： 动态
+四、模块名称： 动态
     
-    1.数据接口名称：发布动态
+  1.数据接口名称：发布动态
     url：/feeds/api/v1.0/publish/feeds
     请求方式：post
     简单逻辑： 动态有标题且正文>100字，或 图片>=3张的为优选内容
@@ -714,7 +880,7 @@
 }
 
    返回结果说明 ：{
-     请参考 推荐活动
+     请参考 推荐动态
    
    }
 
@@ -1147,9 +1313,7 @@
         }
     ]
 }
-
-
-  5.数据接口名称：添加动态浏览
+5.数据接口名称：添加动态浏览
     url：/feeds/api/v1.0/get/feeds/add/view/{id}
     请求方式：get
     请求参数、说明：
@@ -1163,7 +1327,7 @@
     "data": null
 }
    
-     6.数据接口名称：添加收藏
+6.数据接口名称：添加收藏
     url：v1.0/feeds/add/collects/{feedsId}/{userId}
     请求方式：get
     请求参数、说明：
@@ -1177,7 +1341,7 @@
     "msg": "成功",
     "data": null
 }
-       7.数据接口名称：取消收藏
+7.数据接口名称：取消收藏
     url：v1.0/feeds/cancal/collects/{feedsId}/{userId}
     请求方式：get
     请求参数、说明：
@@ -1193,7 +1357,7 @@
     "data": null
 } 
    
-    8.数据接口名称：发表评论
+8.数据接口名称：发表评论
     url：/feeds/api/v1.0/feeds/sent/comments
     请求方式：post
     请求参数、说明：
@@ -1214,7 +1378,7 @@
    
    
    
-   10.数据接口名称：删除发表评论
+9.数据接口名称：删除发表评论
     url：/feeds/api/v1.0/feeds/cancal/comments/{commentId}/{userId}
     请求方式：get
     简单逻辑：  只能删除自己发布的评论
@@ -1232,4 +1396,3 @@
     "msg": "成功",
     "data": null
 }
-
